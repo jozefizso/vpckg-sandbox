@@ -1,0 +1,19 @@
+name: vcpkg zlib
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "zlib" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: 'ubuntu-latest'
+
+    steps:
+    - name: vcpkg version
+      run: vcpkg version
+    
+    - name: install zlib
+      run: vcpkg install zlib
